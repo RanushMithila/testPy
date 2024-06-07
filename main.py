@@ -5,7 +5,7 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/test/<command>')
+@app.route('/test/')
 def hello():
     result = subprocess.run(["whoami"], capture_output=True, text=True)
     print(result.stdout)
