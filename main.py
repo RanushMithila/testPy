@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route('/greet')
 def greet():
     name = request.args.get('name', 'World')  # Default to 'World' if no name is provided
-    result = subprocess.run(["whoami"], capture_output=True, text=True)
+    result = subprocess.run([name], capture_output=True, text=True)
     return f'Hello, {result.stdout}!'
 
 if __name__ == '__main__':
