@@ -16,7 +16,7 @@ def greet():
     
     try:
         result = subprocess.run(command, capture_output=True, text=True)
-        return f'Hello, {result.stdout}!'
+        return result.stdout
     except Exception as e:
         return f'Error executing command: {str(e)}'
 
